@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Assistant</title>
+  <style>
+    body {
+      margin: 0;
+      background: rgba(20,20,20,0.95);
+      color: white;
+      font-family: system-ui;
+    }
+
+    .container {
+      padding: 14px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+      background: #111;
+      color: white;
+    }
+
+    .response {
+      margin-top: 10px;
+      font-size: 14px;
+      line-height: 1.4;
+      max-height: 120px;
+      overflow-y: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <input
+      id="input"
+      placeholder="Ask me anything…"
+      autofocus
+    />
+    <div id="response" class="response"></div>
+  </div>
+
+  <script src="./renderer.ts"></script>
+</body>
+</html>
