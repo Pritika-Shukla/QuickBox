@@ -26,6 +26,46 @@
       color: white;
     }
 
+    .row {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+    .row input {
+      flex: 1;
+    }
+    .btn {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      border: none;
+      background: #333;
+      color: white;
+      cursor: pointer;
+      font-size: 18px;
+    }
+    .btn:hover { background: #444; }
+    .send { border-radius: 8px; }
+    .mic {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: none;
+      background: #333;
+      color: white;
+      cursor: pointer;
+      font-size: 18px;
+    }
+    .mic:hover { background: #444; }
+    .mic.recording { background: #c00; }
+    .live {
+      margin-top: 8px;
+      font-size: 13px;
+      color: #aaa;
+      min-height: 1.2em;
+    }
     .response {
       margin-top: 10px;
       font-size: 14px;
@@ -37,11 +77,16 @@
 </head>
 <body>
   <div class="container">
-    <input
-      id="input"
-      placeholder="Ask me anything…"
-      autofocus
-    />
+    <div class="row">
+      <input
+        id="input"
+        placeholder="Ask me anything or speak…"
+        autofocus
+      />
+      <button type="button" id="send" class="btn send" title="Send">➤</button>
+      <button type="button" id="mic" class="mic" title="Click to start, click again to stop">🎤</button>
+    </div>
+    <div id="live" class="live"></div>
     <div id="response" class="response"></div>
   </div>
 

@@ -4,4 +4,6 @@ import { contextBridge, ipcRenderer } from "electron"
 
 contextBridge.exposeInMainWorld("ai", {
   ask: (prompt: string) => ipcRenderer.invoke("ask-ai", prompt),
+  transcribe: (audio: Uint8Array) =>
+    ipcRenderer.invoke("whisper-transcribe", audio),
 })
